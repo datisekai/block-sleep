@@ -5,6 +5,10 @@ const scheduledFunctions = require("./scheduledFunctions");
 const app = express();
 app.set("port", process.env.PORT || 3000);
 
+app.get("/", (req, res) => {
+  res.send("server running...");
+});
+
 // ADD CALL to execute your function(s)
 scheduledFunctions.initScheduledJobs();
 
